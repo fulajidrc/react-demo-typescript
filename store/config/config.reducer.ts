@@ -1,10 +1,9 @@
 
+import { ConfigState } from '@/interfaces';
 import { Action } from '../action.interface';
 import { SET_MODE } from './config.type';
 
-export interface ConfigState {
-    darkMode: boolean;
-}
+
 
 const initialState: ConfigState = {
     darkMode: false,

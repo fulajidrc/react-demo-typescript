@@ -13,7 +13,9 @@ function Layout({ children }: LayoutProps) {
   return (
     <div className={darkMode ? 'dark' : 'light'}>
       <Header />
-        <main>{children}</main>
+      <div className='flex flex-row text-gray-700 bg-gray-200 dark:bg-gray-900 px-4 py-4 pt-24 h-screen overflow-auto'>
+        <main className='w-full h-full'>{children}</main>
+      </div>
       {/* <footer>Footer content here</footer> */}
     </div>
   );

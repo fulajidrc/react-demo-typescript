@@ -9,14 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tailwindui/react": "^0.1.1",
     "@types/node": "18.16.1",
     "@types/react": "18.2.0",
     "@types/react-dom": "18.2.1",
     "@types/react-redux": "^7.1.25",
     "@types/redux-thunk": "^2.1.0",
     "autoprefixer": "10.4.14",
+    "axios": "^1.4.0",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.1",
+    "formik": "^2.2.9",
     "next": "13.3.1",
     "postcss": "8.4.23",
     "postcss-nesting": "^11.2.2",
@@ -24,9 +27,12 @@
     "react-dom": "18.2.0",
     "react-redux": "^8.0.5",
     "redux": "^4.2.1",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-persist": "^6.0.0",
     "redux-thunk": "^2.4.2",
     "tailwindcss": "3.3.2",
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "yup": "^1.1.1"
   },
   "devDependencies": {
     "sass": "^1.62.1",

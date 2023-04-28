@@ -1,5 +1,6 @@
-import { ConfigState } from "../config/config.reducer";
+import { AuthState, ConfigState } from "@/interfaces";
 
 export interface RootState {
     config: ConfigState;
-  }
+    auth:AuthState
+}
