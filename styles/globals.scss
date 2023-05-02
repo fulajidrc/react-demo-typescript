@@ -1,3 +1,5 @@
+@import 'react-toastify/dist/ReactToastify.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -20,7 +22,8 @@ body {
   color: rgb(var(--foreground-rgb));
 }
 
-@import './header.module.scss'
+@import './header.module.scss';
+
 
 
 

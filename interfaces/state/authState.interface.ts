@@ -5,4 +5,5 @@ export interface AuthState {
     authUser: UserModel | null;
     loginToken: string | null;
     authError: string;
+    submitStatus: boolean
 }

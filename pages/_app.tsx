@@ -10,7 +10,7 @@ import '@/styles/globals.scss'
 import { AppProps } from 'next/app';
 import Layout from '../components/Layout';
 import { Provider } from 'react-redux';
-import store, { persistor } from '@/store';
+import store, { persistor, wrapper } from '@/store';
 import { PersistGate } from 'redux-persist/integration/react';
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -25,4 +25,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+
+export default wrapper.withRedux(MyApp);
+// export default MyApp;

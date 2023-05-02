@@ -1,12 +1,13 @@
 import { AuthState, UserModel } from '@/interfaces';
 import { Action } from '../action.interface'
-import {LOGIN_STATUS, SET_AUTH_USER, SET_AUTH_TOKEN, SET_AUTH_ERROR} from './auth.type'
+import {LOGIN_STATUS, SET_AUTH_USER, SET_AUTH_TOKEN, SET_AUTH_ERROR, UPDATE_LOADER_STATUS} from './auth.type'
 
 const initialState:AuthState = {
     isLogin: false,
     authUser:null,
     loginToken:null,
-    authError:''
+    authError:'',
+    submitStatus: false
 }
 
 export default function(state = initialState, action:Action){
@@ -31,6 +32,11 @@ export default function(state = initialState, action:Action){
             return {
                 ...state,
                 authError: action.payload
+            }
+        case UPDATE_LOADER_STATUS:
+            return {
+                ...state,
+                submitStatus: action.payload
             }
         default: return state
     }

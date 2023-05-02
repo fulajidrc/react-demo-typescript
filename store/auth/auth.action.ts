@@ -1,16 +1,25 @@
 import { LoginModel } from '@/interfaces/login.interface';
-import {LOGIN_STATUS, SET_AUTH_ERROR, SET_AUTH_TOKEN, SET_AUTH_USER} from './auth.type'
+import {LOGIN_STATUS, SET_AUTH_ERROR, SET_AUTH_TOKEN, SET_AUTH_USER, UPDATE_LOADER_STATUS} from './auth.type'
 import axios from 'axios'
 import { Dispatch } from 'redux';
 import { UserModel } from '@/interfaces';
 // import { store } from '../store'    
 export const loginAction = ({email, password}:LoginModel) => async (dispatch:Dispatch<any>)=> {
     try{
+        dispatch({
+            type: UPDATE_LOADER_STATUS,
+            payload: true,
+        });
         const res = await axios.post(`https://fakestoreapi.com/auth/login`, {
             username: email,
             password: password
         })
+        dispatch({
+            type: UPDATE_LOADER_STATUS,
+            payload: false,
+        });
         if(res.status == 200){
+
             dispatch({
                 type: LOGIN_STATUS,
                 payload: true,
@@ -33,6 +42,11 @@ export const loginAction = ({email, password}:LoginModel) => async (dispatch:Dis
             type: SET_AUTH_ERROR,
             payload: "Please enter valid username or password!",
         })
+
+        dispatch({
+            type: UPDATE_LOADER_STATUS,
+            payload: false,
+        });
     }
 
 }
@@ -60,7 +74,7 @@ export const getUserData = (username:string) => async (dispatch:Dispatch<any>) =
     }
 }   
 
-export const logoutAction = () => async (dispatch:Dispatch) => {
+export const logoutAction = () => async (dispatch:Dispatch<any>) => {
     dispatch({
         type: LOGIN_STATUS,
         payload: false,
